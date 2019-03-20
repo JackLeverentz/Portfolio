@@ -1,0 +1,17 @@
+{
+  "name": "jackleverentz",
+  "version": "1.0.0",
+  "description": "A website that showcases my developer skills",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JackLeverentz",
+  "license": "ISC"
+}
