@@ -1,3 +1,152 @@
 <% include ./partials/header %>
 
+<!--YelpCampGloabl-->
+<section class="container">
+    <div class="row text-start">
+        <div class="col-lg-6">
+            <h3 id="heading">YelpCampGlobal.com</h3>
+                <hr>
+                <p>
+                    YelpCampGlobal is a project that I made in my Web Development Bootcamp. It functions
+                    as a Yelp like application but for campgrounds. This site was more of a trial 
+                    run for me to code along and play with the different tools and technolgies that were used. 
+                </p>
+                <p>
+                <strong>Functionality:</strong>
+                <ul>
+                    <li>Create an account, sign in, sign out</li>
+                    <li>Create a campground with a title, name, description, and price</li>
+                    <li>Edit or delete that campground as long as your account was the one that created it</li>
+                    <li>Comment on other campgrounds</li>
+                    <li>Edit or delete those comments as long as you your account was the one that created them</li>
+                </ul>
+                </p>
+                <p>
+                <strong>Stack/Tools:</strong>
+                <ul>
+                    <li>Express.js (NodeJS)</li>
+                    <li>Passport.js (Authentication)</li>
+                    <li>Mongoose (MongoDB)</li>
+                    <li>EJS (Embedded JavaScript)</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Boostrap 4 (Responsive on all device sizes)</li>
+                    <li>Flash Messages</li>
+                    <li>RESTful Routing</li>
+                    <li>Git & Github (Version Control)</li>
+                    <li>Font Awesome (icons)</li>
+                    <li>Google Fonts</li>
+                    <li>Heroku (Deployment)</li>
+                </ul>
+            </p>
+    </div>
+        <div class="col-lg-6 text-center">
+            <img id="splash" class="portfolioImg" src="https://i.ibb.co/kKf1kJV/Screen-Shot-2019-03-21-at-3-06-00-PM.png">
+            <img id="index" class="portfolioImg" src="https://i.ibb.co/yBgRh0W/Screen-Shot-2019-03-21-at-3-28-53-PM.png">
+            <p class="text-center">
+                <a id="linkButton" href="https://github.com/JackLeverentz/YelpCamp" class="btn btn-dark" role="button"><i class="fab fa-github"></i> View the code</a>
+                <a id="linkButton" href="https://yelpcampglobal.herokuapp.com/" class="btn btn-primary" role="button"><i id="link" class="fas fa-external-link-alt"></i> Visit the site</a>
+            </p>
+        </div>
+    </div>
+</secion>
+
+<!--Sparrk Website-->
+<section class="container">
+    <div class="row text-start">
+        <div class="col-lg-6">
+            <h3 id="heading">Sparrk.app</h3> 
+            <hr>
+            <p>
+                Sparrk.app is a place for users of the Sparrk app (My startup) to visit.
+            </p>
+            <p>
+            <strong>Functionality:</strong>
+                <ul>
+                    <li>View information about the app</li>
+                    <li>View the company's legal documents</li>
+                    <li>Donwload the app on both stores from the site</li>
+                    <li>Contact the company through a ticket system</li>
+                    <li>View submitted tickets if you are logged into the Admin account</li>
+                    <li>Write a response email to the sender of the ticket if you are logged into the Admin account</li>
+                    <li>Delete tickets that have been handled if you are logged into the Admin account </li>
+                </ul>
+            </p>
+            <p>
+            <strong>Stack/Tools:</strong>
+                <ul>
+                    <li>Express.js (NodeJS)</li>
+                    <li>Passport.js (Authentication)</li>
+                    <li>Mongoose (MongoDB)</li>
+                    <li>EJS (Embedded JavaScript)</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Boostrap 4 (Responsive on all device sizes)</li>
+                    <li>RESTful Routing</li>
+                    <li>Git & Github (Version Control, Private Repository)</li>
+                    <li>Heroku (Deployment)</li>
+                    <li>Font Awesome (icons)</li>
+                    <li>Google Fonts</li>
+                    <li>Heroku (Deployment)</li>
+                </ul>
+            </p>
+        </div>
+        <div class="col-lg-6 text-center">
+            <img class="portfolioImg" src="https://i.ibb.co/SJ8nFz3/Screen-Shot-2019-03-21-at-4-28-55-PM.png">
+            <img id="currentTickets" class="portfolioImg" src="https://i.ibb.co/8rjF5GJ/Screen-Shot-2019-03-21-at-4-31-26-PM.png">
+            <p class="text-center">
+                <a id="sparrkButton" href="http://sparrk.app" class="btn btn-primary" role="button"><i id="link" class="fas fa-external-link-alt"></i> Visit the site</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<style>
+ #heading{
+       margin-top: 20px;
+       }
+
+hr{
+    border-bottom: 1px solid red;
+    margin-bottom: 30px;
+}
+
+.portfolioImg{
+    margin-top:80px;
+    margin-right:20px;   
+}
+
+#splash{
+    height: 200px;
+    width:500px;
+}
+
+#index{
+    width:500px;
+}
+
+#linkButton{
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+#link{
+    color:white;
+}
+
+#currentTickets{
+    width:400px;
+    height:200px;
+}
+
+#message{
+    margin-top:30px;
+}
+
+#sparrkButton{
+    margin-top: 30px;
+}
+</style>
+
 <% include ./partials/footer %>
