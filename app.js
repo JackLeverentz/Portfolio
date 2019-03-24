@@ -1,35 +1,43 @@
-var express = require("express");
+var express = require("express"),
+    mongoose = require("mongoose"),
+    bodyParser = require("body-parser"),
+    expressSanitizer = require("express-sanitizer"),
+    Ticket = require("./models/tickets");
+
+
+// Route config
+var indexRoutes = require("./routes/index"),
+    aboutRoute  = require("./routes/about"),
+    portfolioRoute = require('./routes/portfolio'),
+    blogRoutes = require("./routes/blogs"),
+    contactRoutes = require("./routes/contact");
+
 
 // App config
 app = express();
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 
-app.get("/", function(req, res){
-    res.render("index");
-});
+/* Conect to mongodb
+var mongoDB = 'mongodb://127.0.0.1/jackleverentz';
+mongoose.connect(mongoDB, {useNewUrlParser: true});
 
-app.get("/about", function(req, res){
-    res.render("about");
-});
+mongoose.connection.once('open',function(){
+        console.log("connection has been made!!");
+}).on('error', function(error){
+    console.log("Connection errror: " + error);
+});*/
 
-app.get("/portfolio", function(req, res){
-    res.render("portfolio")
-})
+// Call Routes
+app.use(indexRoutes);
+app.use(aboutRoute);
+app.use(portfolioRoute);
+app.use(blogRoutes);
+app.use(contactRoutes);
 
-app.get("/blogs", function(req, res){
-    res.render("blogs");
-});
 
-app.get("/contact", function(req, res){
-    res.render("contact");
-});
-
-// Error message if a undefined route is hit
-app.get("*", function(req, res){
-    res.render("error");
-});
-
+// Server listener
 let port = 8080;
 app.listen(port, function(){
     console.log("Server is listening on localhost:" + port);
