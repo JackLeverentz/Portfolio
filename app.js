@@ -30,7 +30,7 @@ mongoose.connection.once('open',function(){
     console.log("Connection errror: " + error);
 });*/
 
-mongoose.connect("mongodb+srv://jack:Calhunts22@jackleverentz-gnugb.mongodb.net/test?retryWrites=true");
+mongoose.connect("mongodb+srv://jack:Calhunts22@jackleverentz-gnugb.mongodb.net/test?retryWrites=true", { useNewUrlParser: true } );
 
 // Call Routes
 app.use(indexRoutes);
