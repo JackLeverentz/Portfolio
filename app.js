@@ -2,7 +2,8 @@ var express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
     expressSanitizer = require("express-sanitizer"),
-    Ticket = require("./models/tickets");
+    Ticket = require("./models/tickets"),
+    User   = require("./models/user");
 
 
 // Route config
@@ -28,6 +29,8 @@ mongoose.connection.once('open',function(){
 }).on('error', function(error){
     console.log("Connection errror: " + error);
 });*/
+
+mongoose.connect("mongodb+srv://jack:Calhunts22@jackleverentz-gnugb.mongodb.net/test?retryWrites=true");
 
 // Call Routes
 app.use(indexRoutes);
