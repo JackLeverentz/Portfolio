@@ -2,6 +2,7 @@ var express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
     expressSanitizer = require("express-sanitizer"),
+    Blog = require("./models/blog"),
     Ticket = require("./models/tickets"),
     User   = require("./models/user");
 
@@ -18,19 +19,13 @@ var indexRoutes = require("./routes/index"),
 app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 
-/* Conect to mongodb
-var mongoDB = 'mongodb://127.0.0.1/jackleverentz';
-mongoose.connect(mongoDB, {useNewUrlParser: true});
+// Local MongoDB conneciton
+mongoose.connect("mongodb://localhost/jackleverentz", { useNewUrlParser: true } );
 
-mongoose.connection.once('open',function(){
-        console.log("connection has been made!!");
-}).on('error', function(error){
-    console.log("Connection errror: " + error);
-});*/
 
-mongoose.connect("mongodb+srv://jack:Calhunts22@jackleverentz-gnugb.mongodb.net/test?retryWrites=true", { useNewUrlParser: true } );
 
 // Call Routes
 app.use(indexRoutes);
