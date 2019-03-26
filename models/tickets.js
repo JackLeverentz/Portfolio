@@ -1,11 +1,12 @@
-const mongoose = require("mongoose");
+var mongoose = require("mongoose");
 
 
 //Create Schema and Model
-const ticketSchema = mongoose.Schema({
+var ticketSchema = mongoose.Schema({
     name: String,
     email: String,
-    message: String
+    message: String,
+    created: {type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model("Ticket", ticketSchema);
