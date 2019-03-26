@@ -7,6 +7,12 @@
                 <p>By Jack Leverentz</p>
                 <p id="showTime"><%= blog.created.toDateString()%></p>
                 <p id="blogBody"><%-blog.body%></p>
+            <form action="/blogs/<%=blog._id%>/edit">
+                <button type="submit" class="btn btn-sm btn-warning">Edit</button>
+            </form>
+            <form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>    
+            </form>   
         </div>
 </section>
 
@@ -36,6 +42,9 @@ hr{
     word-wrap: break-word;
 }
 
+button {
+   margin-top: 30px;
+}
 </style>
 
 <% include ./partials/footer %>
