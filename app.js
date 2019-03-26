@@ -1,6 +1,7 @@
 var express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
+    methodOverride = require ("method-override");
     expressSanitizer = require("express-sanitizer"),
     Blog = require("./models/blog"),
     Ticket = require("./models/tickets"),
@@ -19,7 +20,9 @@ var indexRoutes = require("./routes/index"),
 app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+app.use(expressSanitizer());
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
 
 
 // Local MongoDB conneciton
