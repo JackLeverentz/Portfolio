@@ -21,7 +21,6 @@ router.get("/blogs/new", function(req, res){
 
 // CREATE route
 router.post("/blogs", function(req, res){
-    // create blog
     Blog.create(req.body.blog, function(err, newBlog){
         if(err){
             console.log(err);
@@ -40,6 +39,39 @@ router.get("/blogs/:id", function(req, res){
             res.redirect("/index");
         } else {
             res.render("showBlog", {blog: foundBlog});
+        }
+    });
+});
+
+// EDIT route
+router.get("/blogs/:id/edit", function(req, res){
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs");
+        } else {
+            res.render("editBlog", {blog: foundBlog})
+        }
+    });
+});
+
+// UPDATE route
+router.put("/blogs/:id", function(req, res){
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+        if(err){
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs/" + req.params.id);
+        }
+    });
+});
+
+// DESTROY route
+router.delete("/blogs/:id", function(req, res){
+    Blog.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs");
         }
     });
 });
