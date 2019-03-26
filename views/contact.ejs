@@ -1,6 +1,6 @@
 <% include ./partials/header %>
 
-<!-- Contact forms-->
+<!--Title-->
 <section class="container">
     <div clas="row text-center">
         <div class="col-lg-12 text-center">
@@ -11,16 +11,11 @@
                 to send me a message at any time! Also feel free to find and contact me on the other platforms
                 listed below!
             </p>
-            
-            
-                    
-                
-            
-
         </div>
     </div>
 </section>
 
+<!--Contact Form-->
 <section class="container">
     <div class="row text-start">
         <div class="col-lg-6 col-md-6">
@@ -31,14 +26,15 @@
             </form>
             <button id="send" type="submit" class="btn">Send</button>
         </div>
+        
+        <!--Links-->
         <div class="col-lg-6 text-center links">
             <a class="follow" href="mailto:jackleverentz@gmail.com"><i class="far fa-envelope fa-5x"></i></a>
-            <a class=follow href="https://github.com/JackLeverentz"><i class="fab fa-github fa-5x"></i></a>
+            <a class="follow" href="https://github.com/JackLeverentz"><i class="fab fa-github fa-5x"></i></a>
             <a class="follow" href="https://www.linkedin.com/in/jack-leverentz-320822146/"><i class="fab fa-linkedin-in fa-5x"></i></a>
             <a class="follow" href="https://www.instagram.com/jackleverentz/?hl=en"><i class="fab fa-instagram fa-5x"></i></a> 
         </div>
-    </div>
-    
+    </div> 
 </section>
 
 <!--ADD to contact.css-->
@@ -70,16 +66,32 @@ hr{
         margin-top: 30px;
     }
 
-.fa-github{
-    color:black;
-}
-
 .fa-envelope{
     color: red;
 }
 
+.fa-envelope:hover{
+    color:grey;
+}
+
+.fa-github{
+    color:black;
+}
+
+.fa-github:hover{
+    color:grey;
+}
+
+.fa-linkedin-in:hover{
+    color:grey;
+}
+
 .fa-instagram{
     color: purple;
+}
+
+.fa-instagram:hover{
+    color:grey;
 }
 
 #name{
@@ -105,6 +117,7 @@ margin-top: 40px;
 }
 </style>
 
+<!--Bootstrap JavaScript and jQuery CDN's-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
