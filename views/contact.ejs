@@ -29,10 +29,10 @@
         
         <!--Links-->
         <div class="col-lg-6 text-center links">
-            <a class="follow" href="mailto:jackleverentz@gmail.com"><i class="far fa-envelope fa-5x"></i></a>
-            <a class="follow" href="https://github.com/JackLeverentz"><i class="fab fa-github fa-5x"></i></a>
-            <a class="follow" href="https://www.linkedin.com/in/jack-leverentz-320822146/"><i class="fab fa-linkedin-in fa-5x"></i></a>
-            <a class="follow" href="https://www.instagram.com/jackleverentz/?hl=en"><i class="fab fa-instagram fa-5x"></i></a> 
+            <a id=mail class="follow" href="mailto:jackleverentz@gmail.com"><i class="far fa-envelope fa-5x"></i></a>
+            <a id="github" class="follow" href="https://github.com/JackLeverentz"><i class="fab fa-github fa-5x"></i></a>
+            <a id="linkedIn" class="follow" href="https://www.linkedin.com/in/jack-leverentz-320822146/"><i class="fab fa-linkedin-in fa-5x"></i></a>
+            <a id="instagram" class="follow" href="https://www.instagram.com/jackleverentz/?hl=en"><i class="fab fa-instagram fa-5x"></i></a> 
         </div>
     </div> 
 </section>
@@ -66,31 +66,31 @@ hr{
         margin-top: 30px;
     }
 
-.fa-envelope{
+#mail{
     color: red;
 }
 
-.fa-envelope:hover{
+#mail:hover{
     color:grey;
 }
 
-.fa-github{
+#github{
     color:black;
 }
 
-.fa-github:hover{
+#github:hover{
     color:grey;
 }
 
-.fa-linkedin-in:hover{
+#linkedIn:hover{
     color:grey;
 }
 
-.fa-instagram{
+#instagram{
     color: purple;
 }
 
-.fa-instagram:hover{
+#instagram:hover{
     color:grey;
 }
 
@@ -117,10 +117,6 @@ margin-top: 40px;
 }
 </style>
 
-<!--Bootstrap JavaScript and jQuery CDN's-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
-
+<%include ./partials/footer %>
 
 
