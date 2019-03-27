@@ -1,8 +1,7 @@
-var mongoose = require("mongoose");
-
+var mongoose = require("mongoose")
 
 //Create Schema and Model
-var ticketSchema = mongoose.Schema({
+var ticketSchema = new mongoose.Schema({
     name: String,
     email: String,
     message: String,
