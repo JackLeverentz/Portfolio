@@ -14,6 +14,7 @@ var indexRoutes = require("./routes/index"),
     portfolioRoute = require('./routes/portfolio'),
     blogRoutes = require("./routes/blogs"),
     contactRoutes = require("./routes/contact");
+    ticketRoutes  = require("./routes/tickets");
 
 
 // App config
@@ -24,11 +25,8 @@ app.use(expressSanitizer());
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
-
 // Local MongoDB conneciton
 mongoose.connect("mongodb://localhost/jackleverentz", { useNewUrlParser: true } );
-
-
 
 // Call Routes
 app.use(indexRoutes);
@@ -36,7 +34,7 @@ app.use(aboutRoute);
 app.use(portfolioRoute);
 app.use(blogRoutes);
 app.use(contactRoutes);
-
+app.use(ticketRoutes);
 
 // Server listener
 let port = 8080;
