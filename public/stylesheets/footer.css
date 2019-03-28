@@ -1,0 +1,24 @@
+.bottom{
+    color:grey;
+}
+
+.nav-link{
+    margin-right: 20px;
+    margin-left:20px;
+}
+
+.gmail:hover{
+    color:red;
+}
+
+.github:hover{
+    color:black;
+}
+
+.linkedin-in:hover{
+    color:blue;
+}
+
+.instagram:hover{
+    color:purple;
+}
