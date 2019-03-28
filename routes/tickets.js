@@ -9,7 +9,7 @@ router.get("/tickets", function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("tickets", {tickets: tickets})
+            res.render("admin/tickets", {tickets: tickets})
         }
     });
 });
@@ -20,7 +20,7 @@ router.get("/tickets/:id", function(req, res){
         if(err){
             res.redirect("/tickets");
         } else {
-            res.render("showTicket", {ticket: foundTicket});
+            res.render("admin/showTicket", {ticket: foundTicket});
         }
     });
 });
