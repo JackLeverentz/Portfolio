@@ -1,0 +1,46 @@
+<% include ../partials/header %>
+
+<section class="container">   
+    <div class="row">
+        <div class="lg-col-12"></div>    
+            <% blogs.forEach(function(blog){ %>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="<%=blog.image%>" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><%=blog.title%></h5>
+                            <p id="showTime"><%= blog.created.toDateString()%></p>
+                            <p class="card-text"><%- blog.body.substring(0, 100)%>...</p>
+                            <a href="/blogs/<%=blog._id%>">Read More</a>
+                        </div>
+                    </div> 
+            <% }); %>     
+        </div>
+    </div>              
+</section>
+
+
+<style>
+    #blogsLink{
+        color:red;
+    }
+
+    .card{
+        margin-top: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .card-text{
+        margin-top: 30px;
+    }
+
+    #showTime{
+        color: grey;
+        font-size: 12px;
+    }
+
+    
+
+</style>
+
+<%include ../partials/footer %>
