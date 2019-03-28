@@ -1,1 +1,62 @@
-<h1><%=ticket.title%></h1>
+<% include ./partials/header %>
+
+<h1>Current Tickets:</h1>
+
+<section class="container">
+        <div class="col-lg-12">
+                <% tickets.forEach(function(ticket){ %>
+                    <div class="card" id="ticket" style="width: 48rem;">
+                        <div class="card-body">
+                            <p class="card-title"><strong><%= ticket.name %></strong><span id="time"><%= ticket.created.toDateString()%></span></p>
+                            <p class="card-text"><%=ticket.message%></p>
+                            <a class="btn btn-sm btn-primary" id="selectButton" href="/tickets/<%= ticket._id%>">Select</a>
+                        </div>
+                    </div>
+                <% }); %>
+                <a id="logout" id="logout" href="/logout">Logout</a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Styling for tickets.ejs -->
+<style>
+    body{
+        margin-left: 20px;
+    }
+    h1{
+        color:white;
+    }
+    #tickesTitle{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: white;
+}
+
+#listItem{
+    background: orange;
+}
+
+#ticket{
+    margin-bottom: 10px;
+}
+    
+#time{
+    padding-left: 10px;
+    font-size: 12px;
+    color: grey;
+}
+
+#newAdmin{
+    color:white;
+    padding-right: 30px;
+}
+
+#logout{
+    color:white;
+}
+
+</style>
+
