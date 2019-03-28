@@ -1,0 +1,48 @@
+<% include ./partials/header %>
+
+<div class="card" id="showTicket" style="width: 48rem;">
+        <div class="card-body">
+            <h5 class="card-title">
+                <strong><%=ticket.name%></strong>
+                <span id="emailAdress"><a href="mailto:<%=ticket.email%>"><%=ticket.email%></a></span>
+            </h5>
+                <p id="showTime"><%= ticket.created.toDateString()%></p>
+                <p class="card-text"><%= ticket.message %></p>
+            <form action="/tickets/<%= ticket._id %>?_method=DELETE" method=POST>
+                <button id="deleteButton" class="btn"><i class="fas fa-trash-alt"></i></button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Styling for show.ejs -->
+    <style>
+        .nav-link:hover{
+        color:white;
+        }
+        .nav-link{
+         font-family: 'Varela Round', sans-serif;
+         color: black;
+        }
+        #showTicket{
+    margin-top: 100px;
+    margin-left: 260px;
+}
+
+#deleteButton{
+    color: red;
+}
+
+#emailAdress{
+    padding-left: 20px;
+    font-size: 15px;
+    color: blue;
+}
+
+#showTime{
+    font-size: 12px;
+    color:grey;
+    padding-bottom: 15px;
+}
+
+
+    </style>
