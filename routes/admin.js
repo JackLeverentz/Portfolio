@@ -4,12 +4,26 @@ var express = require("express"),
     router  = express.Router();
     middlware = require("../middleware/index");
 
-// Register Admnim
-router.get("/register", middlware.isLoggedIn, function(req, res){
-    res.render("register")
+
+// Render admin signin template
+router.get("/login", function(req, res){
+    res.render("admin/login");
 });
 
-/* Handle User signup (If I need to make another account)
+// Handle admin singin
+router.post("/login", passport.authenticate("local", 
+    {
+        successRedirect:"/",
+        failureRedirect:"/login"
+    }), function(req, res){
+});
+
+/* Register Admin (If I need to make another account)
+router.get("/register", middlware.isLoggedIn, function(req, res){
+    res.render("admin/register")
+});
+
+/* Handle User signup
 router.post("/register", function(req, res){
     var newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, function(err, user){
@@ -23,17 +37,6 @@ router.post("/register", function(req, res){
     });
 });*/
     
-// Render admin signin template
-router.get("/login", function(req, res){
-    res.render("login");
-});
 
-// Handle admin singin
-router.post("/login", passport.authenticate("local", 
-    {
-        successRedirect:"/",
-        failureRedirect:"/login"
-    }), function(req, res){
-});
     
 module.exports = router;
