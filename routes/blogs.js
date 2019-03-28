@@ -1,7 +1,7 @@
 var express = require("express"),
     router  = express.Router();
     Blog = require("../models/blog");
-
+    middleware = require("../middleware/index");
 
 // Render the list of blogs
 router.get("/blogs", function(req, res){
@@ -9,14 +9,14 @@ router.get("/blogs", function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("blogs", {blogs: blogs});
+            res.render("blogs/blogs", {blogs: blogs});
         }
     });
 });
 
 // Render the new blog form
-router.get("/blogs/new", function(req, res){
-    res.render("newBlog");
+router.get("/blogs/new", middleware.isLoggedIn, function(req, res){
+    res.render("blogs/newBlog");
 });
 
 // CREATE route
@@ -24,7 +24,7 @@ router.post("/blogs", function(req, res){
     Blog.create(req.body.blog, function(err, newBlog){
         if(err){
             console.log(err);
-            res.render("new");
+            res.render("blogs/new");
         } else {
             res.redirect("/blogs");
         }
@@ -38,18 +38,18 @@ router.get("/blogs/:id", function(req, res){
             console.log(err);
             res.redirect("/index");
         } else {
-            res.render("showBlog", {blog: foundBlog});
+            res.render("blogs/showBlog", {blog: foundBlog});
         }
     });
 });
 
 // EDIT route
-router.get("/blogs/:id/edit", function(req, res){
+router.get("/blogs/:id/edit", middleware.isLoggedIn, function(req, res){
     Blog.findById(req.params.id, function(err, foundBlog){
         if(err){
             res.redirect("/blogs");
         } else {
-            res.render("editBlog", {blog: foundBlog})
+            res.render("blogs/editBlog", {blog: foundBlog})
         }
     });
 });
