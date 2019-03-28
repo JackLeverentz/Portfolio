@@ -17,7 +17,8 @@ router.post("/tickets", function(req, res){
             res.render("contact");
             console.log(err);
         } else {
-            res.redirect("/tickets");
+            res.redirect("/contact");
+            // ADD SUCCESS FLASH MESSAGE
         }
     });
 });
