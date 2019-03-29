@@ -2,12 +2,10 @@ var express = require("express"),
     router  = express.Router(),
     Ticket = require("../models/tickets");
 
-
 // NEW contact template
 router.get("/contact", function(req, res){
     res.render("contact");
 });
-
 
 // CREATE a new ticket (client)
 router.post("/tickets", function(req, res){
@@ -17,8 +15,8 @@ router.post("/tickets", function(req, res){
             res.render("contact");
             console.log(err);
         } else {
+            req.flash("success", "Thank you for the message, I'll get back to you as soon as possible!");
             res.redirect("/contact");
-            // ADD SUCCESS FLASH MESSAGE
         }
     });
 });
