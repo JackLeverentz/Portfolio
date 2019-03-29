@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Jackleverentz</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,6 +30,14 @@
                     <li class="nav-item">
                         <a id="contactLink" class="nav-link" href="/contact">Contact</a>
                     </li>
+                    <% if(currentUser){ %>
+                    <li class="nav-item">
+                            <a id="createLink" class="nav-link" href="/blogs/new">Create</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="ticketsLink" class="nav-link" href="/tickets">Tickets</a>
+                        </li>
+                    <% } %>
                 </ul>
             </div>
         </nav>
