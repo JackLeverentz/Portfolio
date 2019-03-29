@@ -6,11 +6,11 @@ var express = require("express"),
     User   = require("./models/user"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
+    flash = require("connect-flash"),
     passportLocalMongoose = require("passport-local-mongoose"),
     Blog = require("./models/blog"),
     Ticket = require("./models/tickets");
    
-
 // Route config
 var indexRoutes = require("./routes/index"),
     aboutRoute  = require("./routes/about"),
@@ -27,6 +27,10 @@ app.set("view engine", "ejs");
 app.use(expressSanitizer());
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
+app.use(flash());
+
+// Atlas MongoDB connection
+//mongoose.connect("mongodb+srv://Jack:Calhunts22@jackleverentz-gnugb.mongodb.net/test?retryWrites=true", { useNewUrlParser: true } );
 
 // Local MongoDB conneciton
 mongoose.connect("mongodb://localhost/jackleverentz", { useNewUrlParser: true } );
@@ -43,6 +47,14 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// Flash and global user configuration
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
+});
+
 // Call Routes
 app.use(indexRoutes);
 app.use(aboutRoute);
@@ -51,6 +63,11 @@ app.use(blogRoutes);
 app.use(contactRoutes);
 app.use(ticketRoutes);
 app.use(adminRoutes);
+
+// Render error page for any pages that don't exist
+app.get("*", function(req, res){
+    res.render("error");
+});
 
 // Server listener
 let port = 8080;
