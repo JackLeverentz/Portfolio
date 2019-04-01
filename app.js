@@ -30,10 +30,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 // Atlas MongoDB connection
-//mongoose.connect("mongodb+srv://Jack:Calhunts22@jackleverentz-gnugb.mongodb.net/test?retryWrites=true", { useNewUrlParser: true } );
-
-// Local MongoDB conneciton
-mongoose.connect("mongodb://localhost/jackleverentz", { useNewUrlParser: true } );
+mongoose.conntect("mongodb+srv://jack11:Calhunts22@personalprojects-gnugb.mongodb.net/test?retryWrites=true", {useNewUrlParser: true});
 
 // Passport Configurations
 app.use(require("express-session")({
