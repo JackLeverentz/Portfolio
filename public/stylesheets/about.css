@@ -32,6 +32,12 @@ section{
     margin-bottom: 40px;
 }
 
+.frontEnd
+{
+    margin-right:35px;
+    margin-left: 35px;
+}
+
 #html{
     color:red;
 }
