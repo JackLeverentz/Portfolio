@@ -67,7 +67,4 @@ app.get("*", function(req, res){
 });
 
 // Server listener
-let port = 8080;
-app.listen(port, function(){
-    console.log("Server is listening on localhost:" + port);
-});
+app.listen(process.env.PORT || 8080);
