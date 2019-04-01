@@ -18,7 +18,7 @@ router.post("/login", passport.authenticate("local",
     }), function(req, res){
 });
 
- //Register Admin (If I need to make another account)
+ /*Register Admin (If I need to make another account)
 router.get("/register", function(req, res){
     res.render("admin/register")
 });
@@ -35,6 +35,6 @@ router.post("/register", function(req, res){
            res.redirect("tickets");
        });
     });
-});
+});*/
 
 module.exports = router;
