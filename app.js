@@ -30,7 +30,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 // Atlas MongoDB connection
-mongoose.connect(DATABASEURL, {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 
 // Passport Configurations
 app.use(require("express-session")({
