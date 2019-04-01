@@ -23,14 +23,14 @@
                 <input id="name" class="form text-start" type="text" name="ticket[name]" placeholder="Name" required/>
                 <input id="email" class="form text-start" type="text" name="ticket[email]" placeholder="Email" required/>
                 <textarea id="message" class="form form-control" type="text" name="ticket[message]" placeholder="Your Message" style="width: 100%; height: 150px;" required></textarea>
-                <button id="send" type="submit" class="btn">Send</button>
                 <% if(success && success.length > 0){ %>
                     <div class="container">
                         <div class="alert alert-success" role="alert">
                             <%=success%>
                         </div>
                     </div> 
-                <% } %>           
+                <% } %> 
+                <button id="send" type="submit" class="btn">Send</button>        
             </form>   
         </div>
 </section>
