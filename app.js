@@ -32,6 +32,9 @@ app.use(flash());
 // Atlas MongoDB connection
 mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 
+// Local MongoDB connection
+//mongoose.connect("mongodb://localhost/jackleverentz", { useNewUrlParser: true } );
+
 // Passport Configurations
 app.use(require("express-session")({
     secret: "jackrobertleverentz",
