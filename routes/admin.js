@@ -19,7 +19,7 @@ router.post("/login", passport.authenticate("local",
 });
 
  //Register Admin (If I need to make another account)
-router.get("/register", middlware.isLoggedIn, function(req, res){
+router.get("/register", function(req, res){
     res.render("admin/register")
 });
 
@@ -36,5 +36,5 @@ router.post("/register", function(req, res){
        });
     });
 });
-   
+
 module.exports = router;
