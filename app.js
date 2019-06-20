@@ -33,7 +33,7 @@ app.use(flash());
 mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 
 // Local MongoDB connection
-//mongoose.connect("mongodb://localhost/jackleverentz", { useNewUrlParser: true } );
+//mongoose.connect("mongodb://localhost:27017/jackleverentz", { useNewUrlParser: true } );
 
 // Passport Configurations
 app.use(require("express-session")({
@@ -71,3 +71,4 @@ app.get("*", function(req, res){
 
 // Server listener
 app.listen(process.env.PORT || 8080);
+console.log("local server started!");
